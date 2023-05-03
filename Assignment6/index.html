@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment6</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="font"><h1>Guess the number game</h1></div>
+
+    <button onclick="game()" id="button_style" >Start</button>
+    <div id=text><p></p></div>
+    <div class="margin"><p id="text1"></p></div>
+    <script>
+        function game(){
+            input=prompt("Enter number between 1 and 100")
+            
+           
+            if(input>=1&&input<=100){
+                temp=0
+            i=1
+               while(i<=5){
+                    result=Math.floor(Math.random() * 100)+1
+                   txt="<p>Computer guessed "+result+"</p>"
+                   document.getElementById("text").innerHTML+=txt
+                   if(result==input){
+                    temp=1
+                    break
+                   }
+                   i++
+
+
+                }
+                if(temp==1){
+                document.getElementById("text1").innerHTML="Computer Wins"}
+                else{
+                document.getElementById("text1").innerHTML="You Win"}
+
+          }
+            else{
+                alert("Wrong Input")
+            }
+
+        }
+    </script>
+</body>
+</html>
